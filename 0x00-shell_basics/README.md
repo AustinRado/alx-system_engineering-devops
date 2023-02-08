@@ -9,3 +9,4 @@
 'Task 8. Delete the file betty'
 'Task 9. Delete the directory'
 'Task 10. script that changes the working directory to the previous one'
+'Task 11. script that lists all files in the current directory and the parent of the working directory in long format'
