@@ -5,3 +5,4 @@
 'Task 4. Display current directory contents, including hidden files (starting with .)'
 'Task 5. Display current directory contents'
 'Task 6. Create a script that creates a directory in a directory'
+'Task 7. Move the file '
