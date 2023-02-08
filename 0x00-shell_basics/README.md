@@ -8,3 +8,4 @@
 'Task 7. Move the file'
 'Task 8. Delete the file betty'
 'Task 9. Delete the directory'
+'Task 10. script that changes the working directory to the previous one'
