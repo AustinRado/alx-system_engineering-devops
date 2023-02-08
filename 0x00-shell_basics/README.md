@@ -10,3 +10,4 @@
 'Task 9. Delete the directory'
 'Task 10. script that changes the working directory to the previous one'
 'Task 11. script that lists all files in the current directory and the parent of the working directory in long format'
+'Task 12. script that prints the type of the file named iamafile in the /tmp directory when we will run your script'
