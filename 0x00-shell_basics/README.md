@@ -7,3 +7,4 @@
 'Task 6. Create a script that creates a directory in a directory'
 'Task 7. Move the file'
 'Task 8. Delete the file betty'
+'Task 9. Delete the directory'
