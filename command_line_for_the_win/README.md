@@ -18,7 +18,7 @@ In addition to completing the project tasks and submitting the required screensh
 8. Make sure to include the steps you followed to use the SFTP command-line tool in your project’s README.md file. This will help the reviewers understand how you performed the file transfer using SFTP.
 
 ### NOTE :
-1. The screenshoots of completed level should be inside the dir /root/alx-system_engineering-devops/command_line_for_the_win/
+1. The screenshots of completed level should be inside the dir /root/alx-system_engineering-devops/command_line_for_the_win/
 
 #### Manual QA Review
 It is your responsibility to request a review for this project from a peer. If no peers have been reviewed, you should request a review from a TA or staff member.
