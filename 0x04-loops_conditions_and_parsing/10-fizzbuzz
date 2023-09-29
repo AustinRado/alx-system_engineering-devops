@@ -1,19 +1,20 @@
 #!/usr/bin/env bash
-# Dsplay FizzBuzz but number btwn 1 and 100
+# Fizzbuzz
 
-index=1
-while (( index < 101 )); do
-	if (( index % 15 == 0 ));
-	then
-		echo "FizzBuzz"
-	elif (( index % 5 == 0 ));
-	then
-		echo "Buzz"
-	elif (( index % 3 == 0 ));
-	then
-		echo "Fizz"
-	else
-		echo "$index"
-	fi
-	(( index++ ))
+n=1
+
+while [ "$n" -le 100 ]; do
+
+
+  if ! (( n % 3 )) && ! (( n % 5 )); then
+    echo "FizzBuzz"
+  elif ! (( n % 3 )); then
+    echo "Fizz"
+  elif ! (( n % 5 )); then
+    echo "Buzz"
+  else
+    echo "$n"
+  fi
+  
+  ((n++))
 done
