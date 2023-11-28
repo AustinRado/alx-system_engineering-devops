@@ -1,23 +1,22 @@
 # Install and configure nginx
-package { 'jfryman-nginx':
+
+package { 'nginx':
   ensure  => installed,
 }
 
-include nginx
-
-class { 'nginx':
-  manage_repo     => true,
-  package_source  => 'nginx-stable',
+file_line { 'install':
+  ensure => 'present',
+  path   => 'ets/nginx/sites-enabled/default',
+  after  => 'listen 80 default_server;',
+  line   => 'rewrite ^/redirect_me https://www.githun.com/AustinRado permanent;', 
 }
 
-nginx::resource::server { '54.87.214.223':
-  listen_port       => 80,
-  www_root          => '/var/www/html',
-  vhost_cfg_append  => { 'rewrite' => '^/redirect_me https://github/AustinRado'},
+file { '/var/www/html/index.nginx-debian.html':
+  content  => 'Hello World!',
 }
 
-file { 'index':
-  path     => '/var/www/html/index.nginx-debian.html',
-  content  => 'Hello World!'
+service { 'nginx':
+  ensure  => running,
+  require => package['nginx'],
 }
 
