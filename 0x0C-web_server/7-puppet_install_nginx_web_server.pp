@@ -1,22 +1,22 @@
-# Install and configure nginx
+# Automating project requirements using Puppet
 
 package { 'nginx':
-  ensure  => installed,
+  ensure => installed,
 }
 
 file_line { 'install':
   ensure => 'present',
-  path   => 'ets/nginx/sites-enabled/default',
+  path   => '/etc/nginx/sites-enabled/default',
   after  => 'listen 80 default_server;',
-  line   => 'rewrite ^/redirect_me https://www.githun.com/AustinRado permanent;', 
+  line   => 'rewrite ^/redirect_me https://www.github.com/besthor permanent;',
 }
 
-file { '/var/www/html/index.nginx-debian.html':
-  content  => 'Hello World!',
+file { '/var/www/html/index.html':
+  content => 'Hello World!',
 }
 
 service { 'nginx':
   ensure  => running,
-  require => package['nginx'],
+  require => Package['nginx'],
 }
 
