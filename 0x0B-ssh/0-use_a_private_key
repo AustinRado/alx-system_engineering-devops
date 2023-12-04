@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# ssh with specified key
+
+ssh ubuntu -i ~/.ssh/school
