@@ -1,0 +1,7 @@
+sudo ufw default deny incoming      #deny incoming traffic
+sudo ufw default allow outgoing     #allow outgoing traffic
+sudo ufw allow ssh                  #allow ssh connections
+sudo ufw allow 22                   #allow 22/tcp
+sudo ufw allow 443                  #allow 443/tcp
+sudo ufw allow 80                   #allow 80/tcp
+sudo ufw enable
