@@ -1,31 +1,37 @@
 #!/usr/bin/python3
-"""
-Queries the Reddit API and prints the titles
-of the first 10 hot posts listed for a given subreddit.
-"""
-
-import requests
+""" Top ten """
 
 
 def top_ten(subreddit):
-    """Print titles of the top ten hot posts for a subreddit."""
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
-    headers = {"User-Agent": "MyUserAgent"}
+    """
+    Prints the titles of the first 10 hot posts listed for a given subreddit
+    """
+    from requests import get
+
+    url = "https://www.reddit.com/r/{}/hot/.json?limit=10".format(subreddit)
+
+    headers = {'user-agent': 'my-app/0.0.1'}
+
+    r = get(url, headers=headers, allow_redirects=False)
+
+    if r.status_code != 200:
+        print(None)
+        return None
 
     try:
-        response = requests.get(url, headers=headers, allow_redirects=False)
+        js = r.json()
 
-        if response.status_code != 200:
-            print(None)
-            return
+    except ValueError:
+        print(None)
+        return None
 
-        data = response.json().get("data", {})
-        children = data.get("children", [])
-        top_posts = [(child["data"]["name"], child["data"]["title"],
-                      child["data"]["ups"]) for child in children][:10]
+    try:
 
-        for post in top_posts:
-            print(post[1])
+        data = js.get("data")
+        children = data.get("children")
+        for child in children[:10]:
+            post = child.get("data")
+            print(post.get("title"))
 
-    except requests.exceptions.RequestException:
+    except:
         print(None)
